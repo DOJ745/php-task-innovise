@@ -6,10 +6,8 @@ use InvalidArgumentException;
 
 class Task1
 {
-    function main() : void{
+    public function main(): void
+    {
         throw new InvalidArgumentException();
-    }
-    function testPrint(): void{
-        print_r("branch check");
     }
 }
