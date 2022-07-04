@@ -6,10 +6,10 @@
   "authors": [
     {
       "name": "DOJ",
-      "email": "andrey745fa@gmail.com"
+      "email": "email@example.com"
     }
   ],
   "require": {
-    "friendsofphp/php-cs-fixer": "v2.19.3"
+    "friendsofphp/php-cs-fixer": "^3.8"
   }
 }
