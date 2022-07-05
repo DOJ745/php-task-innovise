@@ -1,6 +1,5 @@
-<?php
-
 namespace src;
+<?php
 
 class CustomCalc
 {
@@ -61,6 +60,3 @@ class Task12
         print($test->multiply()->divideBy(2). '</br>');
     }
 }
-
-$test = new Task12();
-$test->main();
