@@ -17,7 +17,7 @@ class Task8
     {
         $errorMsg = 'Json cannot be decoded or encoded data is deeper than the nesting limit!';
         if (json_decode($json) === false || json_decode($json) === null) {
-            throw new InvalidArgumentException($errorMsg);
+            throw new \InvalidArgumentException($errorMsg);
         }
         $jsonObj = json_decode($json);
 
