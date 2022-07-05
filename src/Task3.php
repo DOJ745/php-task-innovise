@@ -1,9 +1,5 @@
-<?php
-
 namespace src;
-
-use InvalidArgumentException;
-use TypeError;
+<?php
 
 class Task3
 {
@@ -37,12 +33,4 @@ class Task3
 
         return $result;
     }
-}
-
-$test = new Task3();
-
-try {
-    print_r($test->main('456'));
-} catch (TypeError $e) {
-    print_r($e->getMessage());
 }
