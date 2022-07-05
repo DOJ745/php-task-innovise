@@ -1,20 +1,6 @@
+namespace src;
 <?php
 
-namespace src;
-
-use DateTime;
-use Exception;
-
-/*
- * Write a function that finds how many Mondays
- * occurred on the first day of each month in
- * the period from January 1, 1980 to December 31, 1999.
- *
- * Function arguments: (int $year, int $lastYear, int $month, int $lastMonth, string $day = 'Monday')
- *
- * All arguments described in the task already, why do we need to make function with
- * parameters which are already know?
- */
 class Task6
 {
     private function outputToConsole($data): void
@@ -51,18 +37,9 @@ class Task6
             }
         }
 
-        // Watch console output in browser
         $this->outputToConsole("Count of Mondays: $mondaysNum");
         foreach ($mondaysArr as $item) {
             $this->outputToConsole($item);
         }
     }
-}
-
-$test = new Task6();
-
-try {
-    $test->main();
-} catch (Exception $e) {
-    print_r($e->getMessage());
 }
