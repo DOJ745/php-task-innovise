@@ -17,7 +17,7 @@ class Task9
     {
         $errMsg = 'One of the arguments has an invalid value!';
         if (gettype($arr) !== 'array' || gettype($number) !== 'integer') {
-            throw new InvalidArgumentException($errMsg);
+            throw new \InvalidArgumentException($errMsg);
         }
 
         $result = [];
