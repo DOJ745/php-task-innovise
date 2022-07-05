@@ -7,17 +7,18 @@ use InvalidArgumentException;
 
 class Task2
 {
-    public function main(string $date) : string{
+    public function main(string $date): string
+    {
         $dateFormat = 'd.m.Y';
         $checkDate = DateTime::createFromFormat($dateFormat, $date);
 
-        if($checkDate !== false && !array_sum($checkDate::getLastErrors())){
+        if ($checkDate !== false && !array_sum($checkDate::getLastErrors())) {
             $currentDate = DateTime::createFromFormat($dateFormat, date($dateFormat));
 
             $originDay = date('d', strtotime($checkDate->format($dateFormat)));
             $originMonth = date('m', strtotime($checkDate->format($dateFormat)));
             $originYear = date('Y', strtotime($currentDate->format($dateFormat)));
-            $originDate = $originDay . "." . $originMonth . "." . $originYear;
+            $originDate = "$originDay.$originMonth.$originYear";
 
             $formattedBirthdayDate = DateTime::createFromFormat($dateFormat, $originDate);
 
@@ -29,20 +30,23 @@ class Task2
 
             $leapYear = (int) date('L', strtotime($checkDate->format($dateFormat)));
 
-            if($diffDays < 0 && $leapYear === 0) { $diffDays += 365; }
-            elseif($diffDays < 0 && $leapYear === 1) { $diffDays += 366; }
+            if ($diffDays < 0 && $leapYear === 0) {
+                $diffDays += 365;
+            } elseif ($diffDays < 0 && $leapYear === 1) {
+                $diffDays += 366;
+            }
 
-            return "Days left until the birthday: " . $diffDays;
+            return "Days left until the birthday: $diffDays";
         }
-        throw new InvalidArgumentException("Invalid date! Use pattern DD.MM.YYYY!");
+
+        throw new InvalidArgumentException('Invalid date! Use pattern DD.MM.YYYY!');
     }
 }
 
 $test = new Task2();
-try{
-    print_r($test->main("02.07.1929"));
-}
-catch (InvalidArgumentException $e){
+
+try {
+    print_r($test->main('02.07.1929'));
+} catch (InvalidArgumentException $e) {
     print_r($e->getMessage());
 }
-
