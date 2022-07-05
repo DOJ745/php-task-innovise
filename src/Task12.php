@@ -9,6 +9,9 @@ class CustomCalc
 
     public function __construct(int $a, int $b)
     {
+        if (gettype($a) !== 'integer' || gettype($b) !== 'integer') {
+            throw new \InvalidArgumentException('One of the arguments is not a number!');
+        }
         $this->argOne = $a;
         $this->argTwo = $b;
     }
