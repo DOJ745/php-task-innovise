@@ -3,28 +3,39 @@ namespace src;
 
 class Task5
 {
-    private function getFib($n): float
+    private function fibonacci(int $n): GMP|int
     {
-        return round(pow((sqrt(5) + 1) / 2, $n) / sqrt(5));
-    }
+        if ($n === 0 || $n === 1) {
+            return $n;
+        }
+        $result = 0;
+        $x = 0; // First fibonacci number
+        $y = 1; // Second fibonacci number
 
-    private function fib2($n, $c = 2, $n2 = 0, $n1 = 1)
-    {
-        return $c < $n ? $this->fib2($n, $c + 1, $n1, $n1 + $n2) : $n1 + $n2;
-    }
-
-    public function main(int $n): string
-    {
-        $i = 1;
-        $result = 0.0;
-        while (strlen((string) $this->fib2($i)) <= $n) {
-            $result = $this->fib2($i);
-            $i++;
+        for ($i = 0; $i <= $n; $i++) {
+            $result = gmp_add($x, $y);
+            $x = $y;
+            $y = $result;
         }
 
         return $result;
     }
-}
 
-$test = new Task5();
-print_r($test->main(18));
+    public function main(int $n): string
+    {
+        if (gettype($n) !== 'integer') {
+            throw new \InvalidArgumentException('Argument must be a number!');
+        }
+        $i = 0;
+        $result = 0;
+
+        while (strlen(gmp_strval($this->fibonacci($i))) <= $n) {
+            $result = $this->fibonacci($i);
+            if (strlen(gmp_strval($result)) === $n) {
+                break;
+            }
+            $i++;
+        }
+        return gmp_strval($result);
+    }
+}
