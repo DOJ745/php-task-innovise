@@ -1,9 +1,5 @@
-<?php
-
 namespace src;
-
-use Exception;
-use InvalidArgumentException;
+<?php
 
 class Task8
 {
@@ -40,13 +36,4 @@ class Task8
 
         return $this->formJsonDoc($titlePair, $authorPair, $publisherPair);
     }
-}
-
-$testJson = '{"Title": "The Cuckoos Calling","Author": "Robert Galbraith","Detail": {"Publisher": "Little Brown"}}';
-$test = new Task8();
-
-try {
-    print_r($test->main($testJson));
-} catch (Exception $e) {
-    print_r($e->getMessage());
 }
