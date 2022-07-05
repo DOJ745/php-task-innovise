@@ -6,7 +6,7 @@ class Task10
     public function main(int $input): array
     {
         if (gettype($input) !== 'integer' || $input < 0) {
-            throw new InvalidArgumentException('Argument must be a positive number!');
+            throw new \InvalidArgumentException('Argument must be a positive number!');
         }
         $result = [$input];
         while ($input > 1) {
