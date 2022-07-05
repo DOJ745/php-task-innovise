@@ -1,9 +1,5 @@
-<?php
-
 namespace src;
-
-use DateTime;
-use InvalidArgumentException;
+<?php
 
 class Task2
 {
@@ -43,10 +39,3 @@ class Task2
     }
 }
 
-$test = new Task2();
-
-try {
-    print_r($test->main('02.07.1929'));
-} catch (InvalidArgumentException $e) {
-    print_r($e->getMessage());
-}
