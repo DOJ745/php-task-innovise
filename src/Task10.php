@@ -1,10 +1,5 @@
-<?php
-
 namespace src;
-
-use Exception;
-use InvalidArgumentException;
-use TypeError;
+<?php
 
 class Task10
 {
@@ -26,14 +21,4 @@ class Task10
 
         return $result;
     }
-}
-
-$test = new Task10();
-
-try {
-    print_r($test->main(67));
-} catch (TypeError $e) {
-    print_r($e->getMessage());
-} catch (Exception $e) {
-    print_r($e->getMessage());
 }
