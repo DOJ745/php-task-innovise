@@ -19,7 +19,7 @@ class Task3
     public function main(int $num): int
     {
         if (gettype($num) !== 'integer') {
-            throw new InvalidArgumentException('Argument must be a number!');
+            throw new \InvalidArgumentException('Argument must be a number!');
         }
 
         $numLength = strlen((string) $this->countNumSum($num));
