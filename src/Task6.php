@@ -29,7 +29,7 @@ class Task6
         for ($i = $year; $i <= $lastYear; $i++) {
             for ($j = $month; $j <= $lastMonth; $j++) {
                 $formattedDate = "01.$j.$i";
-                $tempDate = new DateTime($formattedDate);
+                $tempDate = new \DateTime($formattedDate);
                 if ($this->isMonday($tempDate->format($dayOfWeekFormat))) {
                     $mondaysNum++;
                     $mondaysArr[] = $tempDate->format($firstDayOfMonthFormat);
