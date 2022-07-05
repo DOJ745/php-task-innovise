@@ -6,20 +6,20 @@ class Task2
     public function main(string $date): string
     {
         $dateFormat = 'd.m.Y';
-        $checkDate = DateTime::createFromFormat($dateFormat, $date);
+        $checkDate = \DateTime::createFromFormat($dateFormat, $date);
 
         if ($checkDate !== false && !array_sum($checkDate::getLastErrors())) {
-            $currentDate = DateTime::createFromFormat($dateFormat, date($dateFormat));
+            $currentDate = \DateTime::createFromFormat($dateFormat, date($dateFormat));
 
             $originDay = date('d', strtotime($checkDate->format($dateFormat)));
             $originMonth = date('m', strtotime($checkDate->format($dateFormat)));
             $originYear = date('Y', strtotime($currentDate->format($dateFormat)));
             $originDate = "$originDay.$originMonth.$originYear";
 
-            $formattedBirthdayDate = DateTime::createFromFormat($dateFormat, $originDate);
+            $formattedBirthdayDate = \DateTime::createFromFormat($dateFormat, $originDate);
 
-            $endDate = DateTime::createFromFormat($dateFormat, $formattedBirthdayDate->format($dateFormat));
-            $startDate = DateTime::createFromFormat($dateFormat, date($dateFormat));
+            $endDate = \DateTime::createFromFormat($dateFormat, $formattedBirthdayDate->format($dateFormat));
+            $startDate = \DateTime::createFromFormat($dateFormat, date($dateFormat));
 
             $diff = date_diff($startDate, $endDate);
             $diffDays = (int) $diff->format('%R%a');
@@ -35,7 +35,7 @@ class Task2
             return "Days left until the birthday: $diffDays";
         }
 
-        throw new InvalidArgumentException('Invalid date! Use pattern DD.MM.YYYY!');
+        throw new \InvalidArgumentException('Invalid date! Use pattern DD.MM.YYYY!');
     }
 }
 
