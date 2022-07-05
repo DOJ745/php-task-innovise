@@ -29,7 +29,6 @@ class Task3
             $numLength = strlen((string) $this->countNumSum($num));
             $result = $this->countNumSum($num);
             $num = $result;
-            print_r("Step: " . $num . "\n");
         }
 
         return $result;
@@ -38,7 +37,7 @@ class Task3
 
 $test = new Task3();
 try{
-    print_r("Final: " . $test->main("456"));
+    print_r($test->main("456"));
 }
 catch (TypeError $e){
     print_r($e->getMessage());
