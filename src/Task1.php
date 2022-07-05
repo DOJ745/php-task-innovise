@@ -6,7 +6,7 @@ class Task1
     public function main(int $inputNumber): string
     {
         if (gettype($inputNumber) !== 'integer') {
-            throw new InvalidArgumentException('Argument must be a number!');
+            throw new \InvalidArgumentException('Argument must be a number!');
         }
 
         return $inputNumber > 30 ? 'More than 30' :
