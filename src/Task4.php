@@ -1,9 +1,5 @@
-<?php
-
 namespace src;
-
-use InvalidArgumentException;
-use TypeError;
+<?php
 
 class Task4
 {
@@ -25,12 +21,4 @@ class Task4
 
         return $result;
     }
-}
-
-$test = new Task4();
-
-try {
-    print_r($test->main('The quick-brown_fox jumps over the_lazy-dog'));
-} catch (TypeError $e) {
-    print_r($e->getMessage());
 }
