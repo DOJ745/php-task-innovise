@@ -1,10 +1,5 @@
-<?php
-
 namespace src;
-
-use Exception;
-use InvalidArgumentException;
-use TypeError;
+<?php
 
 class Task9
 {
@@ -37,16 +32,4 @@ class Task9
 
         return $result;
     }
-}
-
-$test = new Task9();
-$testArr = [2, 7, 7, 1, 8, 2, 7, 8, 7, 7, 2];
-$testNum = 16;
-
-try {
-    print_r($test->main($testArr, $testNum));
-} catch (TypeError $e) {
-    print_r($e->getMessage());
-} catch (Exception $e) {
-    print_r($e->getMessage());
 }
