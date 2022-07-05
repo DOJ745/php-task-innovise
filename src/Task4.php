@@ -6,7 +6,7 @@ class Task4
     public function main(string $input): string
     {
         if (gettype($input) !== 'string') {
-            throw new InvalidArgumentException('Argument must be a string!');
+            throw new \InvalidArgumentException('Argument must be a string!');
         }
         $result = '';
         $strLen = strlen($input);
