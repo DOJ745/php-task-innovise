@@ -38,4 +38,3 @@ class Task2
         throw new \InvalidArgumentException('Invalid date! Use pattern DD.MM.YYYY!');
     }
 }
-
