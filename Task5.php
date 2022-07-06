@@ -36,6 +36,7 @@ class Task5
             }
             $i++;
         }
+
         return gmp_strval($result);
     }
 }
