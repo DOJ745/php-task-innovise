@@ -3,7 +3,7 @@ namespace src;
 
 class Task5
 {
-    private function fibonacci(int $n): GMP|int
+    private function fibonacci(int $n): \GMP|int
     {
         if ($n === 0 || $n === 1) {
             return $n;
