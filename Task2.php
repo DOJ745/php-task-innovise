@@ -3,7 +3,7 @@ namespace src;
 
 class Task2
 {
-    public static function main(string $date): string
+    public static function main($date): int | InvalidArgumentException
     {
         $dateFormat = 'd.m.Y';
         $checkDate = \DateTime::createFromFormat($dateFormat, $date);
@@ -32,9 +32,9 @@ class Task2
                 $diffDays += 366;
             }
 
-            return "Days left until the birthday: $diffDays";
+            return $diffDays;
         }
 
-        throw new \InvalidArgumentException('Invalid date! Use pattern DD.MM.YYYY!');
+        return throw new \InvalidArgumentException();
     }
 }
