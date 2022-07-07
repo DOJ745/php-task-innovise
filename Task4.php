@@ -3,7 +3,7 @@ namespace src;
 
 class Task4
 {
-    public function main(string $input): string
+    public static function main(string $input): string
     {
         if (gettype($input) !== 'string') {
             throw new \InvalidArgumentException('Argument must be a string!');
