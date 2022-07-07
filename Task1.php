@@ -1,4 +1,5 @@
-<?php namespace src;
+namespace src;
+<?php
 
 class Task1
 {
