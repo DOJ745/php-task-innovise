@@ -13,7 +13,7 @@ class Task8
         return implode('', $pair);
     }
 
-    public function main(string $json): string
+    public static function main(string $json): string
     {
         $errorMsg = 'Json cannot be decoded or encoded data is deeper than the nesting limit!';
         if (json_decode($json) === false || json_decode($json) === null) {
@@ -23,17 +23,17 @@ class Task8
 
         $titleKey = 'Title';
         $titleValue = $jsonObj->{$titleKey};
-        $titlePair = $this->formKeyValuePair($titleKey, $titleValue);
+        $titlePair = (new Task8)->formKeyValuePair($titleKey, $titleValue);
 
         $authorKey = 'Author';
         $authorValue = $jsonObj->{$authorKey};
-        $authorPair = $this->formKeyValuePair($authorKey, $authorValue);
+        $authorPair = (new Task8)->formKeyValuePair($authorKey, $authorValue);
 
         $detailKey = 'Detail';
         $publisherKey = 'Publisher';
         $publisherValue = $jsonObj->{$detailKey}->{$publisherKey};
-        $publisherPair = $this->formKeyValuePair($publisherKey, $publisherValue);
+        $publisherPair = (new Task8)->formKeyValuePair($publisherKey, $publisherValue);
 
-        return $this->formJsonDoc($titlePair, $authorPair, $publisherPair);
+        return (new Task8)->formJsonDoc($titlePair, $authorPair, $publisherPair);
     }
 }
