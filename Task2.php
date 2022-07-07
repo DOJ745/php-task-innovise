@@ -3,7 +3,7 @@ namespace src;
 
 class Task2
 {
-    public function main(string $date): string
+    public static function main(string $date): string
     {
         $dateFormat = 'd.m.Y';
         $checkDate = \DateTime::createFromFormat($dateFormat, $date);
