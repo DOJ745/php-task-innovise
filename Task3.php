@@ -3,7 +3,7 @@ namespace src;
 
 class Task3
 {
-    private function countNumSum(int $num): int
+    private static function countNumSum(int $num): int
     {
         $absNum = (string) abs($num);
         $strLen = strlen($absNum);
@@ -16,18 +16,18 @@ class Task3
         return $result;
     }
 
-    public function main(int $num): int
+    public static function main(int $num): int
     {
         if (gettype($num) !== 'integer') {
             throw new \InvalidArgumentException('Argument must be a number!');
         }
 
-        $numLength = strlen((string) $this->countNumSum($num));
-        $result = $this->countNumSum($num);
+        $numLength = strlen((string) Task3::countNumSum($num));
+        $result = Task3::countNumSum($num);
 
         while ($numLength > 1) {
-            $numLength = strlen((string) $this->countNumSum($num));
-            $result = $this->countNumSum($num);
+            $numLength = strlen((string) Task3::countNumSum($num));
+            $result = Task3::countNumSum($num);
             $num = $result;
         }
 
