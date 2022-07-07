@@ -52,7 +52,7 @@ class CustomCalc
 
 class Task12
 {
-    public function main(): void
+    public static function main(): void
     {
         $test = new CustomCalc(6, 3);
         print($test->add() . '</br>');
