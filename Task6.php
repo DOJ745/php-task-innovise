@@ -3,7 +3,7 @@ namespace src;
 
 class Task6
 {
-    private function outputToConsole($data): void
+    private static function outputToConsole($data): void
     {
         echo '<script>';
         echo "console.log('" . $data . "')";
@@ -15,7 +15,7 @@ class Task6
         return $dayOfWeek === 'Mon';
     }
 
-    public function main(): void
+    public static function main(): void
     {
         $dayOfWeekFormat = 'D';
         $firstDayOfMonthFormat = '01.m.Y';
@@ -30,16 +30,16 @@ class Task6
             for ($j = $month; $j <= $lastMonth; $j++) {
                 $formattedDate = "01.$j.$i";
                 $tempDate = new \DateTime($formattedDate);
-                if ($this->isMonday($tempDate->format($dayOfWeekFormat))) {
+                if ((new Task6)->isMonday($tempDate->format($dayOfWeekFormat))) {
                     $mondaysNum++;
                     $mondaysArr[] = $tempDate->format($firstDayOfMonthFormat);
                 }
             }
         }
 
-        $this->outputToConsole("Count of Mondays: $mondaysNum");
+        Task6::outputToConsole("Count of Mondays: $mondaysNum");
         foreach ($mondaysArr as $item) {
-            $this->outputToConsole($item);
+            Task6::outputToConsole($item);
         }
     }
 }
