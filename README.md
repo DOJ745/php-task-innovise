@@ -1,0 +1,1 @@
+Task 9: Sum of three consecutive numbers equal to 'n'
