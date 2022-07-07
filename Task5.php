@@ -3,7 +3,7 @@ namespace src;
 
 class Task5
 {
-    private function fibonacci(int $n): \GMP|int
+    private static function fibonacci(int $n): \GMP|int
     {
         if ($n === 0 || $n === 1) {
             return $n;
@@ -21,7 +21,7 @@ class Task5
         return $result;
     }
 
-    public function main(int $n): string
+    public static function main(int $n): string
     {
         if (gettype($n) !== 'integer') {
             throw new \InvalidArgumentException('Argument must be a number!');
@@ -29,8 +29,8 @@ class Task5
         $i = 0;
         $result = 0;
 
-        while (strlen(gmp_strval($this->fibonacci($i))) <= $n) {
-            $result = $this->fibonacci($i);
+        while (strlen(gmp_strval(Task5::fibonacci($i))) <= $n) {
+            $result = Task5::fibonacci($i);
             if (strlen(gmp_strval($result)) === $n) {
                 break;
             }
