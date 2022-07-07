@@ -3,7 +3,7 @@ namespace src;
 
 class Task1
 {
-    public function main(int $inputNumber): string
+    public static function main(int $inputNumber): string
     {
         if (gettype($inputNumber) !== 'integer') {
             throw new \InvalidArgumentException('Argument must be a number!');
