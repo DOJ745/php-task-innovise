@@ -3,7 +3,7 @@ namespace src;
 
 class Task10
 {
-    public function main(int $input): array
+    public static function main(int $input): array
     {
         if (gettype($input) !== 'integer' || $input < 0) {
             throw new \InvalidArgumentException('Argument must be a positive number!');
