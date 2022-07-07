@@ -3,7 +3,7 @@ namespace src;
 
 class Task7
 {
-    public function main(array $arr, int $position): array
+    public static function main(array $arr, int $position): array
     {
         if (gettype($arr) !== 'array') {
             throw new \InvalidArgumentException('Argument must be an array!');

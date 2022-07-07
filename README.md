@@ -1,0 +1,1 @@
+Task 7: Normalizing an array after deleting the element
