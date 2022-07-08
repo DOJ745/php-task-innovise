@@ -1,5 +1,6 @@
-namespace src;
 <?php
+
+namespace src;
 
 class Task3
 {
