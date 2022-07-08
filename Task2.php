@@ -1,5 +1,5 @@
-<?php
 namespace src;
+<?php
 
 class Task2
 {
