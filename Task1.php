@@ -1,7 +1,6 @@
-namespace src;
 <?php
 
-use InvalidArgumentException;
+namespace src;
 
 class Task1
 {
