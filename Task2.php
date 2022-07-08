@@ -1,9 +1,10 @@
-namespace src;
 <?php
+
+namespace src;
 
 class Task2
 {
-    public static function main($date): int | InvalidArgumentException
+    public static function main($date): int
     {
         $dateFormat = 'd.m.Y';
         $checkDate = \DateTime::createFromFormat($dateFormat, $date);
