@@ -1,6 +1,7 @@
 <?php
 
 namespace src;
+
 class Task1
 {
     public static function main($inputNumber): string
