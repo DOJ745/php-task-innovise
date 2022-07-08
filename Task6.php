@@ -1,5 +1,6 @@
-namespace src;
 <?php
+
+namespace src;
 
 class Task6
 {
@@ -30,7 +31,7 @@ class Task6
             for ($j = $month; $j <= $lastMonth; $j++) {
                 $formattedDate = "01.$j.$i";
                 $tempDate = new \DateTime($formattedDate);
-                if ((new Task6)->isMonday($tempDate->format($dayOfWeekFormat))) {
+                if ((new Task6())->isMonday($tempDate->format($dayOfWeekFormat))) {
                     $mondaysNum++;
                     $mondaysArr[] = $tempDate->format($firstDayOfMonthFormat);
                 }
