@@ -1,5 +1,6 @@
-namespace src;
 <?php
+
+namespace src;
 
 class Task8
 {
@@ -23,17 +24,17 @@ class Task8
 
         $titleKey = 'Title';
         $titleValue = $jsonObj->{$titleKey};
-        $titlePair = (new Task8)->formKeyValuePair($titleKey, $titleValue);
+        $titlePair = (new Task8())->formKeyValuePair($titleKey, $titleValue);
 
         $authorKey = 'Author';
         $authorValue = $jsonObj->{$authorKey};
-        $authorPair = (new Task8)->formKeyValuePair($authorKey, $authorValue);
+        $authorPair = (new Task8())->formKeyValuePair($authorKey, $authorValue);
 
         $detailKey = 'Detail';
         $publisherKey = 'Publisher';
         $publisherValue = $jsonObj->{$detailKey}->{$publisherKey};
-        $publisherPair = (new Task8)->formKeyValuePair($publisherKey, $publisherValue);
+        $publisherPair = (new Task8())->formKeyValuePair($publisherKey, $publisherValue);
 
-        return (new Task8)->formJsonDoc($titlePair, $authorPair, $publisherPair);
+        return (new Task8())->formJsonDoc($titlePair, $authorPair, $publisherPair);
     }
 }
