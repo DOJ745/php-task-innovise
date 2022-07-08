@@ -1,5 +1,6 @@
-namespace src;
 <?php
+
+namespace src;
 
 class Task9
 {
@@ -24,7 +25,7 @@ class Task9
         for ($i = 0; $i < count($arr); $i++) {
             $consNumSum = $arr[$i] + $arr[$i + 1] + $arr[$i + 2];
             if ($consNumSum === $number) {
-                $sumOfNumbers = (new Task9)->formSumSequence($arr[$i], $arr[$i + 1], $arr[$i + 2]);
+                $sumOfNumbers = (new Task9())->formSumSequence($arr[$i], $arr[$i + 1], $arr[$i + 2]);
                 $sumStr = "$sumOfNumbers = $number";
                 $result[] = $sumStr;
             }
